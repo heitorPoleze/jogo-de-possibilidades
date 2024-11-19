@@ -16,20 +16,20 @@ export function validarCPF(text){
 }
 
 
-export function verificaNomeECPF(vet, inNome, inCPF){
+export function CPFeNomeExistente(vet, inNome, inCPF){
     for(let i = 0; i < vet.length; i++){
         if(vet[i].nome == inNome.value){
         alert("Não pode registrar um nome já existente.")
         limpaCampos(inNome);
         inNome.focus();
-        return false;
+        return true;
         }else if(vet[i].cpf == inCPF.value){
             alert("Não pode registrar um CPF já existente.");
             limpaCampos(inCPF);
             inCPF.focus();
-            return false;
-        }else{
             return true;
+        }else{
+            return false;
         }
     }
 }

@@ -41,7 +41,7 @@ btGerarPessoa.addEventListener('click', function () {
         Input.limpaCampos(inAge, inNasc);
         inAge.focus();
     }else{
-        if(vetPessoas.length < 1 || Input.verificaNomeECPF(vetPessoas, inName, inCPF)){
+        if(vetPessoas.length < 1 || !Input.CPFeNomeExistente(vetPessoas, inName, inCPF)){
             criaPessoa(vetPessoas, nome, age, CPF, anoNasc);
             Input.limpaCampos(inAge, inCPF, inNasc);
             inName.focus();
